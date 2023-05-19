@@ -1,0 +1,30 @@
+
+
+.navbar-toggler-icon {
+    color: #330E00;
+}
+
+.carro {
+    background-color: #FABE1F;
+    border-radius: 15px;
+}
+
+.slide img{
+    height: 50vh;
+    width: 30vw;
+}
+
+.slide video{
+    height: 50vh;
+    width: 80vw;
+}
+
+.slide{
+    margin: auto;
+    width: 80vw;
+}
+
+p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+}

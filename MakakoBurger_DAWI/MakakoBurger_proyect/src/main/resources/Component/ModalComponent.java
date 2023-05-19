@@ -1,0 +1,21 @@
+import org.springframework.stereotype.Component;
+
+@Component
+public class ModalComponent {
+
+	<template id="modal-template">
+	<div class="modal fade" id="modal-prototype" tabindex="-1"
+		aria-labelledby="modal-prototype-label" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header"></div>
+
+				<div class="modal-body"></div>
+
+				<div class="modal-footer"></div>
+			</div>
+		</div>
+	</div>
+</template>
+	
+}

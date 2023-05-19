@@ -1,0 +1,158 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+}
+
+.carro {
+    background-color: #FABE1F;
+    border-radius: 15px;
+}
+
+.libro{
+	font-family: 'Chau Philomene One', sans-serif;
+	font-weight: light;
+	color:#310D05;
+}
+
+.titulo {
+	font-family: 'Chau Philomene One', sans-serif;
+	color: #401605;
+}
+
+.labelRecla{	
+	font-size: 12px;
+}
+
+.imagen{
+	width: 27vw;
+	height: 45vh;
+}
+
+.coment{
+	outline: 0px;
+}
+
+.borderMain{
+	border: 1px solid #FABE1F;
+	border-width: 3px;
+	
+}
+
+.H1Main{
+	background-color: #FABE1F;
+	font-family: 'Chau Philomene One', sans-serif;
+	text-transform: uppercase;
+	color: #310D05;
+	padding: 10px;
+}
+
+.inputs{
+	width: 100%;
+}
+
+.botonEnviar{
+	background-color: #320D05;
+	color:#FFF6EA;
+}
+
+.btnMenu{
+	background-color: #401605;
+	color:#FFF6EA;
+}
+
+.pagUsuario{
+	min-height: 100vh;
+}
+
+.content{
+	border: 2px solid #FABE1F;
+}
+
+.cajaTitulo{
+	background-color: #FABE1F;
+}
+
+.contenedor{
+	
+	max-width: 814px;
+	
+}
+
+.data {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	flex-wrap: wrap;
+}
+.d-row {
+	display: flex;
+	gap: 20px;
+	justify-content: space-between;
+	background-color: var(--gray-light-color);
+	padding: 0.75rem;
+	border-radius: 10px;
+}
+.operations {
+	font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.operations > * {
+	cursor: pointer;
+	transition: opacity 300ms ease-in-out;
+}
+
+.operations > *:hover {
+	opacity: 0.75;
+}
+
+.btnUsuario{
+
+	width: 75%;
+	margin: auto;
+	background-color: #FFB002;
+	color: #330E00;
+}
+
+.arrowText {
+	position:relative;
+	color: #310D05;
+	margin: 20px;
+	height: 48px;
+	flex-grow: 0.6;
+	background: #FFB002;
+	border: 0.2 1px #FFB002 ;
+	float: left;
+	}
+	.arrowText:before, .arrowText:after {
+	content: " ";
+	position: absolute;
+	display: block;
+	width: 0;
+	height: 0;
+	}
+
+	.arrowRight:before, .arrowRight:after {
+		border-bottom: 41px solid transparent;
+		border-top: 41px solid transparent;
+		background-color: transparent;
+		top:-16px;
+		}
+		.arrowRight:after {
+		background-color: transparent;
+		border-left: 30px solid #FFB002;
+		right: -24px;
+		z-index: 2;
+		}
+		
+	   .arrowRight:before {
+		background-color: transparent;
+		right: -16.8px;
+		z-index: 1;
+		}

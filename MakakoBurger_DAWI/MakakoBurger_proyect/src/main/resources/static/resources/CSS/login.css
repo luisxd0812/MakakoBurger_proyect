@@ -1,0 +1,67 @@
+/* ------------------------ LOGIN ------------------------ */
+body{
+	background-color: #FFF6E8;
+}
+.hero-image {
+	min-height: 100vh;
+	background-image: url("../img/FondoLogin1.png");
+	background-position: center center;
+  	background-attachment: fixed;
+  	background-size: cover;
+}
+
+.hero-image > div {
+  	background-color: rgba(0, 0, 0, 0.50);
+  	min-height: 100vh;
+}
+
+.hero-image > div >div {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+}
+
+.title {
+	color: var(--white-color);
+	font-weight: bolder;
+	margin: 1rem auto;
+}
+
+.login {	
+	margin: auto;
+	padding: 20px;
+	border-radius: 17px;
+	width: clamp(20vw, 50vw, 330px);
+	background-color: rgba(255, 255, 255, 0.75);
+}
+
+.login > h2 {
+	margin-bottom: 20px;
+	font-weight: bold;
+}
+
+.login-form {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.login-error {
+	text-align: left;
+	font-size: .875em;	
+	margin-bottom: 0.25rem;
+	color: var(--bs-red);
+}
+
+.recover-password {
+	align-self: flex-end;
+	color: var(--bs-dark);
+	text-decoration: none;
+	font-weight: 300;
+	transition: opacity 300ms ease-in-out;
+}
+
+.recover-password:hover {
+	color: var(--bs-dark);
+	opacity: .75;
+}

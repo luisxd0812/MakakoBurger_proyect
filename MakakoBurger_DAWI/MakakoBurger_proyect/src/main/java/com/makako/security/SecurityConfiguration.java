@@ -42,9 +42,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests().antMatchers(
 				"/registro**",
-				"/js/**",
-				"/css/**",
-				"/img/**").permitAll()
+				"/resources/JS/**",
+				"/resources/CSS/**",
+				"/resources/FONTS/**",
+				"/resources/Leaflet-MiniMap-master/**",
+				"/resources/IMG/**").permitAll()
 		.anyRequest().authenticated()
 		.and()
 		.formLogin()

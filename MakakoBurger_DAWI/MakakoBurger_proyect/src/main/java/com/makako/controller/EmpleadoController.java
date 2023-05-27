@@ -3,11 +3,11 @@ package com.makako.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@RequestMapping("/index")
+@RequestMapping("/administrador")
 @Controller
 public class EmpleadoController {
 	
-	@RequestMapping("/menu")
+	@RequestMapping("/inicio")
 	public String indexAdministrador() {
 		return "indexAdmin";
 	}

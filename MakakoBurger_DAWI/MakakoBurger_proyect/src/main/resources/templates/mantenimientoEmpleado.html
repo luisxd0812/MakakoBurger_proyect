@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head th:insert="/plantilla/NavAdminComponent :: headAdministrador"></head>
+
+
+<body class="d-flex">
+
+
+	<div th:insert="/plantilla/NavAdminComponent :: navAdminComponent"></div>
+
+		<main class="main">
+
+
+			<div class="box info">
+				<div class="header-info">
+					<h2 class="mb-3">Mantenimiento de empleados</h2>
+
+					<form class="form-search" method="POST">
+						<select class="form-select" name="cboPosition" id="cboPosition">
+							<option value="all">Todos</option>
+							<c:forEach var="cargo" items="${ listaCargo }">
+								<option value="${ cargo.getIdCargo() }" ${ cargo.getIdCargo()==cargoB ? 'selected' : ''
+									}>${ cargo.getCargo() }</option>
+							</c:forEach>
+						</select> <input class="form-control" type="text" id="search" name="search"
+							placeholder="Buscar..." value="${ busqueda == null ? '' : busqueda }" /> <input
+							class="form-control" type="date" id="start-date" name="startDate"
+							placeholder="Fecha de Inicio" min="2000-01-01" max="2030-12-31"
+							value="${ fechaInicio == null ? '' : fechaInicio }" /> <input class="form-control"
+							type="date" id="end-date" name="endDate" placeholder="Fecha de Fin" min="2000-01-01"
+							max="2030-12-31" value="${ fechaFinal == null ? '' : fechaFinal }" /> <input
+							class="form-control bg-primary text-white" type="submit" value="Aplicar Búsqueda" />
+					</form>
+
+					<button id="btn-add-emp" class="btn-add">
+						Añadir empleado <i class="fs-4 bi bi-plus-circle-fill"></i>
+					</button>
+				</div>
+
+				<hr class="separator">
+
+				<div class="body-info">
+					<c:forEach items="${listaEmpleado}" var="empleadoL">
+						<div class="d-row">
+							<div class="data">
+								<input type="hidden" name="id" value=${ empleadoL.getIdEmpleado()}>
+								<input type="hidden" name="object" value="emp"> <span>${ empleadoL.getIdEmpleado()
+									}</span>
+
+								<span>${ empleadoL.getNom_Empleado() += ' ' += empleadoL.getApe_Empleado()}</span>
+
+								<span>${ empleadoL.getCargo().getCargo() }</span> <span>${
+									empleadoL.getUsuario().getCorreo() }</span>
+
+								<span>${empleadoL.getTelfEmpleado()}</span>
+							</div>
+
+							<div class="operations">
+								<i class="icon-info bi bi-info-circle-fill"></i> <i
+									class="icon-update bi bi-pencil-square"></i>
+								<c:if test="${ empleadoL.getDNI_Empleado() !=  empleado.getDNI_Empleado() }">
+									<i class="icon-delete bi bi-trash-fill"></i>
+								</c:if>
+							</div>
+						</div>
+					</c:forEach>
+				</div>
+
+				<div class="navigation-info">
+					<span>Navegando de ${ pag } al ${ totalDePaginacion }</span>
+
+					<div>
+						<ul class="pagination">
+							<c:if test="${ pag > 1 }">
+								<a class="link-active" href='EmpleadosController?p=${ pag - 1 }'>Anterior</a>
+							</c:if>
+
+							<c:forEach var="i" begin="${ comienza }" end="${ termina }">
+								<a ${ pag==i ? "class='link-desactive'"
+									: "class='link-active' href='EmpleadosController?p=" +=i +="'" }>${ i }</a>
+							</c:forEach>
+
+							<c:if test="${ pag < totalDePaginacion }">
+								<a class="link-active" href='EmpleadosController?p=${ pag + 1 }'>Siguiente</a>
+							</c:if>
+						</ul>
+					</div>
+
+					<span>Se encontraron ${ totalRegistro } resultados</span>
+				</div>
+			</div>
+		</main>
+
+		<%@ include file="snippets/modal-template.jsp" %>
+</body>
+<!-- Custom JavaScript -->
+<script type="module" src="./js/mantenimiento-empleado.js"></script>
+
+</html>

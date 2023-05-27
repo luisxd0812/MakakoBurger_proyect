@@ -1,9 +1,4 @@
-import org.springframework.stereotype.Component;
-
-@Component
-public class ModalComponent {
-
-	<template id="modal-template">
+<template id="modal-template" th:fragment="modalFragmento">
 	<div class="modal fade" id="modal-prototype" tabindex="-1"
 		aria-labelledby="modal-prototype-label" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered">
@@ -17,5 +12,3 @@ public class ModalComponent {
 		</div>
 	</div>
 </template>
-	
-}

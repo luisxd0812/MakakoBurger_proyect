@@ -1,11 +1,36 @@
+<!DOCTYPE html>                 
+<html xmlns:th="http://www.thymeleaf.org">    
 
-import org.springframework.stereotype.Component;
+<head>
+	<meta charset="ISO-8859-1">
 
-@Component
-public class FooterComponent {
-	
-	
-	<footer class=" text-white w-100 sticky-bottom mt-auto"
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!--CSS ESTILOS BOOTSTRAP-->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+	<link rel="stylesheet" th:href="@{/resources/CSS/bootstrap.css}">
+	<link rel="stylesheet" th:href="@{/resources/CSS/bootstrap-theme.css}">
+	<link rel="stylesheet" th:href="@{/resources/CSS/estilosUsuario.css}">
+	<link rel="stylesheet" th:href="@{/resources/CSS/cssCarousel.css }">
+	<link rel="stylesheet" th:href="@{/resources/CSS/bootstrap-utilities.css}">
+	<link rel="stylesheet" th:href="@{/resources/CSS/bootstrapValidator.css}">
+	<link rel="stylesheet" th:href="@{/resources/CSS/bootstrap-utilities.min.css}">
+	<link rel="stylesheet" th:href="@{/resources/CSS/Redes.css}">
+	<link rel="stylesheet" th:href="@{/resources/FONTS/all.min.css}">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Chau+Philomene+One&family=Raleway:wght@500&family=Secular+One&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+		integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+	<title>Makako Burger</title>
+		
+	<footer class=" text-white w-100 sticky-bottom mt-auto"   th:fragment="footerPagina"
 			style="background-color: #492311; border-top: 2px solid #FABE1F;">
 
 			<div class="d-flex flex-wrap justify-content-center mt-3 text-white m-auto">
@@ -78,5 +103,3 @@ public class FooterComponent {
 				</div>
 			</div>
 		</footer>
-
-}

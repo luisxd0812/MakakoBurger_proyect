@@ -40,6 +40,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
+		// AUTORIZAR PARA EL ADMIN
 		http.authorizeRequests().antMatchers(
 				"/registro**",
 				"/resources/JS/**",

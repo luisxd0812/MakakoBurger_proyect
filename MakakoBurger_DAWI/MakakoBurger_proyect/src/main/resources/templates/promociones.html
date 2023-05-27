@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Agregar promociones</title>
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap"
+	rel="stylesheet">
+<!-- Bootstrap -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+	crossorigin="anonymous">
+<!-- Bootstrap icon -->
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+<!-- Custom CSS  -->
+<link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+<body class="d-flex">
+	<style>
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+	color: #fff;
+	font-weight: bold;
+	background-color: #B87400;
+}
+
+.titulo {
+	font-family: 'Chau Philomene One', sans-serif;
+	color: #310D05;
+	font-size: 40px;
+	font-weight: bold;
+}
+</style>
+	
+	<main class="main">
+		<div class="box info">
+			<div class="header-info">
+				<h2 class="mb-3">Promociones</h2>
+
+				<form class="form-search" method="POST">
+					<input class="form-control" type="text" id="search-promo"
+					name="search" placeholder="Buscar..."
+					value="" /> <input
+					class="form-control" type="text" id="start-price"
+					name="startPrice" placeholder="Precio de Inicio"
+					pattern="^\d{1,3}(.\d{1,2})?$"
+					title="Introduce el precio correctamente. Se acepta como máximo 3 enteros y 2 decimales que son establecidos por un '.'."
+					value="" /> <input
+					class="form-control" type="text" id="end-price" name="endPrice"
+					placeholder="Precio Final" pattern="^\d{1,3}(.\d{1,2})?$"
+					title="Introduce el precio correctamente. Se acepta como máximo 3 enteros y 2 decimales que son establecidos por un '.'."
+					value="" /> <input
+					class="form-control" type="date" id="start-date" name="startDate"
+					placeholder="Fecha de Inicio" min="2000-01-01" max="2030-12-31"
+					value="" /> <input
+					class="form-control" type="date" id="end-date" name="endDate"
+					placeholder="Fecha de Fin" min="2000-01-01" max="2030-12-31"
+					value="" /> <input
+					class="form-control bg-primary text-white" type="submit"
+					value="Aplicar Búsqueda"  />
+				</form>
+
+				<button id="btn-add-promo" class="btn-add">
+					Añadir Promocion <i class="fs-4 bi bi-plus-circle-fill"></i>
+				</button>
+			</div>
+
+			<hr class="separator">
+
+			<div class="body-info">
+						<div class="d-row">
+							<div class="data">
+								<span>No hay datos para mostrar</span>
+							</div>
+						</div>
+
+					
+
+							<div class="d-row">
+								<div class="data">
+									<input type="hidden" name="id" value="" />
+									<input type="hidden" name="object" value="promo" /> <span></span>
+
+									<div class="img-prod">
+										<img alt=""
+											src="" />
+									</div>
+
+									<span></span> <span></span>
+
+									<span></span>
+								</div>
+
+								<div class="operations">
+									<i class="icon-info bi bi-info-circle-fill"></i> <a
+										href=""><i
+										class="icon-update bi bi-pencil-square"></i></a> <i
+										class="icon-delete bi bi-trash-fill"></i>
+								</div>
+							</div>
+						
+			</div>
+
+			<div class="navigation-info">
+				<span></span>
+
+					<div>
+						<ul class="pagination">
+								<a class="link-active"
+									href="">Anterior</a>
+
+								<a class="link-active"
+									href="">Siguiente</a>
+						</ul>
+					</div>
+
+				<span></span>
+			</div>
+
+
+		</div>
+
+
+	</main>
+
+
+</body>
+<!-- Custom JavaScript -->
+<script type="module" src="./js/promociones.js"></script>
+<!--ESTILOS JS-->
+<script type="text/javascript" src="./js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="./js/bootstrap.min.js"></script>
+<script type="text/javascript" src="./js/bootstrapValidator.js"></script>
+<script type="text/javascript" src="./js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="./js/popper.min.js"></script>
+</html>

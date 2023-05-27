@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Table(name = "Cargo")
 public class Cargo {
 	@Id
-	@Column(name = "IdCargo")
+	@Column(name = "id_cargo")
 	private int idCargo;
 	
 	@Column(name = "Cargo")

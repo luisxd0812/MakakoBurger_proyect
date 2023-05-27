@@ -26,7 +26,7 @@ public class Empleado {
 	
 	//RELACION DE MUCHOS A UNO EN CARGO
 	@ManyToOne
-	@JoinColumn(name = "id_cargo")
+	@JoinColumn(name = "id_cargoEmp")
 	private Cargo cargEmpleado;
 	
 	@Column(name = "fechaRegistro_Empleado")

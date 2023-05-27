@@ -1,6 +1,105 @@
+<!--MODAL MANTENIMIENTO EMPLEADO-->
+<template id="modal-template" th:fragment="modalEmpleado">
+
+	<div class="modal fade" id="modalEmpleado" tabindex="-1" aria-labelledby="-label" aria-hidden="true"
+		data-keyboard="false" data-backdrop="static">
+		<div class="modal-dialog modal-dialog-centered">
+
+			<div class="modal-content">
+
+				<div class="modal-header">
+
+					<i class="icon text-center text-primary bi bi-plus-circle-fill"></i>
+					<h4 class="modal-title text-center" id="modal-prototype-label">Mantenimiento Empleado</h4>
+
+				</div>
+
+				<div class="modal-body">
+
+					<form class="d-flex flex-column gap-4" id="idRegistra" action="" method="POST">
+						<input type="hidden" id="idCodigo" name="codigo" value="0">
+
+						<div class="row align-items-sm-center">
+							<label class="col-sm-3 fw-bold" for="name">Nombres:</label>
+							<div class="col-sm-9">
+								<input class="form-control" type="text" id="name" name="name" value="" />
+								<div id="name-invalid" class="text-start invalid-feedback">Introduce el nombre
+									correctamente. Mínimo 3 caracteres, máximo 40.</div>
+							</div>
+						</div>
+
+						<div class="row align-items-sm-center">
+							<label class="col-sm-3 fw-bold" for="last-Name">Apellidos:</label>
+							<div class="col-sm-9">
+								<input class="form-control" type="text" id="last-name" name="lastName" value="" />
+								<div id="last-name-invalid" class="text-start invalid-feedback">Introduce el apellido
+									correctamente. Mínimo 3 caracteres, máximo 40.</div>
+							</div>
+						</div>
+
+						<div class="row align-items-sm-center">
+							<label class="col-sm-3 fw-bold" for="dni">DNI:</label>
+							<div class="col-sm-9">
+								<input class="form-control" type="text" id="dni" name="dni" value="" />
+								<div id="dni-invalid" class="text-start invalid-feedback">Introduce un dni válido que
+									contenga 8 dígitos.</div>
+							</div>
+						</div>
+
+						<div class="row align-items-sm-center">
+							<label class="col-sm-3 fw-bold" for="email">Correo:</label>
+							<div class="col-sm-9">
+								<input class="form-control" id="email" name="email" type="text" value="" />
+								<div id="email-invalid" class="text-start invalid-feedback">Introduce un correo válido.
+								</div>
+							</div>
+						</div>
+
+						<div class="row align-items-sm-center">
+							<label class="col-sm-3 fw-bold" for="telephone">Teléfono:</label>
+							<div class="col-sm-9">
+								<input class="form-control" type="text" id="telephone" name="telephone" value="" />
+								<div id="telephone-invalid" class="text-start invalid-feedback">Introduce un número
+									válido. Solo acepta 9 dígitos y comienza con 9.</div>
+							</div>
+						</div>
+
+						<div class="row align-items-sm-center">
+							<label class="col-sm-3 fw-bold">Cargo:</label>
+							<div class="col-sm-9">
+								<select class="form-select" name="cargos">
+
+									<option value=" ">[Seleccione un Cargo]</option>
+
+									<!--Por lenguaje de expresion traemos los tipos a la vista
+													      hacemos uso de utext para traer los datos al option, tambien con lenguaje de expresion
+													      tambien se le da el value para obtener el codigo de la seleccion en el combobox-->
+									<option th:each="fila:${cargos}" th:utext="${fila.nomCargo}"
+										th:value="${fila.idCargo}" />
+								</select>
+							</div>
+						</div>
+
+
+					</form>
+
+				</div>
+
+				<div class="modal-footer"></div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</template>
+
+<!--MANTEMINEOT -->
+
 <template id="modal-template" th:fragment="modalFragmento">
-	<div class="modal fade" id="modal-prototype" tabindex="-1"
-		aria-labelledby="modal-prototype-label" aria-hidden="true">
+	<div class="modal fade" id="modal-prototype" tabindex="-1" aria-labelledby="modal-prototype-label"
+		aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered">
 			<div class="modal-content">
 				<div class="modal-header"></div>

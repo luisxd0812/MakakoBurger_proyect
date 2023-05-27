@@ -1,5 +1,7 @@
 package com.makako.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +21,10 @@ public class EmpleadoService {
 	
 	public void actualizarEmpleado(Empleado empleado) {
 		repo.save(empleado);
+	}
+	
+	public List<Empleado>listarTodos(){
+		return repo.findAll();
 	}
 	
 	public void guardarEmpleadoConDni(Empleado empleado, DNI dni) {

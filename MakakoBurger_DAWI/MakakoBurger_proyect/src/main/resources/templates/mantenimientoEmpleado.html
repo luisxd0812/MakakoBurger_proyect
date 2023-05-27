@@ -9,92 +9,87 @@
 
 	<div th:insert="/plantilla/NavAdminComponent :: navAdminComponent"></div>
 
-		<main class="main">
+	<main class="main">
 
 
-			<div class="box info">
-				<div class="header-info">
-					<h2 class="mb-3">Mantenimiento de empleados</h2>
+		<div class="box info">
+			<div class="header-info">
 
-					<form class="form-search" method="POST">
-						<select class="form-select" name="cboPosition" id="cboPosition">
-							<option value="all">Todos</option>
-							<c:forEach var="cargo" items="${ listaCargo }">
-								<option value="${ cargo.getIdCargo() }" ${ cargo.getIdCargo()==cargoB ? 'selected' : ''
-									}>${ cargo.getCargo() }</option>
-							</c:forEach>
-						</select> <input class="form-control" type="text" id="search" name="search"
-							placeholder="Buscar..." value="${ busqueda == null ? '' : busqueda }" /> <input
-							class="form-control" type="date" id="start-date" name="startDate"
-							placeholder="Fecha de Inicio" min="2000-01-01" max="2030-12-31"
-							value="${ fechaInicio == null ? '' : fechaInicio }" /> <input class="form-control"
-							type="date" id="end-date" name="endDate" placeholder="Fecha de Fin" min="2000-01-01"
-							max="2030-12-31" value="${ fechaFinal == null ? '' : fechaFinal }" /> <input
-							class="form-control bg-primary text-white" type="submit" value="Aplicar Búsqueda" />
-					</form>
+				<h2 class="mb-3">Mantenimiento de empleados</h2>
 
-					<button id="btn-add-emp" class="btn-add">
-						Añadir empleado <i class="fs-4 bi bi-plus-circle-fill"></i>
-					</button>
-				</div>
+				<form class="form-search" method="POST">
 
-				<hr class="separator">
+					<select class="form-select" name="cboPosition" id="cboPosition">
+						<option value="all">Todos</option>
+						<option value=""></option>
 
-				<div class="body-info">
-					<c:forEach items="${listaEmpleado}" var="empleadoL">
-						<div class="d-row">
-							<div class="data">
-								<input type="hidden" name="id" value=${ empleadoL.getIdEmpleado()}>
-								<input type="hidden" name="object" value="emp"> <span>${ empleadoL.getIdEmpleado()
-									}</span>
+					</select>
+					<input class="form-control" type="text" id="search" name="search" placeholder="Buscar..."
+						value="${ busqueda == null ? '' : busqueda }" />
 
-								<span>${ empleadoL.getNom_Empleado() += ' ' += empleadoL.getApe_Empleado()}</span>
+					<input class="form-control" type="date" id="start-date" name="startDate"
+						placeholder="Fecha de Inicio" min="2000-01-01" max="2030-12-31"
+						value="${ fechaInicio == null ? '' : fechaInicio }" />
 
-								<span>${ empleadoL.getCargo().getCargo() }</span> <span>${
-									empleadoL.getUsuario().getCorreo() }</span>
+					<input class="form-control" type="date" id="end-date" name="endDate" placeholder="Fecha de Fin"
+						min="2000-01-01" max="2030-12-31" value="${ fechaFinal == null ? '' : fechaFinal }" />
+					<input class="form-control bg-primary text-white" type="submit" value="Aplicar Búsqueda" />
+				</form>
 
-								<span>${empleadoL.getTelfEmpleado()}</span>
-							</div>
+				<button type="button"  class="btn-add" data-bs-toggle="modal" data-bs-target="#modalEmpleado">
+					Añadir empleado <i class="fs-4 bi bi-plus-circle-fill"></i>
+				</button>
+			</div>
 
-							<div class="operations">
-								<i class="icon-info bi bi-info-circle-fill"></i> <i
-									class="icon-update bi bi-pencil-square"></i>
-								<c:if test="${ empleadoL.getDNI_Empleado() !=  empleado.getDNI_Empleado() }">
-									<i class="icon-delete bi bi-trash-fill"></i>
-								</c:if>
-							</div>
-						</div>
-					</c:forEach>
-				</div>
+			<hr class="separator">
 
-				<div class="navigation-info">
-					<span>Navegando de ${ pag } al ${ totalDePaginacion }</span>
+			<div class="body-info" th:each="obj:${empleados}">
 
-					<div>
-						<ul class="pagination">
-							<c:if test="${ pag > 1 }">
-								<a class="link-active" href='EmpleadosController?p=${ pag - 1 }'>Anterior</a>
-							</c:if>
+				<div class="d-row">
+					<div class="data">
+						<input type="hidden" name="id" value=${ empleadoL.getIdEmpleado()}>
+						<input type="hidden" name="object" value="emp">
+						<span th:text=""></span>
 
-							<c:forEach var="i" begin="${ comienza }" end="${ termina }">
-								<a ${ pag==i ? "class='link-desactive'"
-									: "class='link-active' href='EmpleadosController?p=" +=i +="'" }>${ i }</a>
-							</c:forEach>
+						<span th:text=""></span>
 
-							<c:if test="${ pag < totalDePaginacion }">
-								<a class="link-active" href='EmpleadosController?p=${ pag + 1 }'>Siguiente</a>
-							</c:if>
-						</ul>
+						<span th:text=""></span>
+
+						<span th:text=""></span>
+
+						<span th:text=""></span>
 					</div>
 
-					<span>Se encontraron ${ totalRegistro } resultados</span>
+					<div class="operations">
+
+						<i class="icon-info bi bi-info-circle-fill"></i>
+						<i class="icon-update bi bi-pencil-square"></i>
+						<i class="icon-delete bi bi-trash-fill"></i>
+
+					</div>
 				</div>
 			</div>
-		</main>
 
-		<%@ include file="snippets/modal-template.jsp" %>
+			<div class="navigation-info">
+				<span>Navegando de </span>
+
+				<div>
+					<ul class="pagination">
+
+					</ul>
+				</div>
+
+				<span>Se encontraron ${ totalRegistro } resultados</span>
+			</div>
+		</div>
+	</main>
+
+	<template th:insert="/plantilla/modalTemplateComponent :: modalEmpleado"></template>
 </body>
-<!-- Custom JavaScript -->
-<script type="module" src="./js/mantenimiento-empleado.js"></script>
+<script type="text/javascript" th:src="@{/resources/JS/jquery-1.10.2.min.js}"></script>
+<script type="text/javascript" th:src="@{/resources/JS/bootstrap.min.js}"></script>
+<script type="text/javascript" th:src="@{/resources/JS/bootstrapValidator.js}"></script>
+<script type="text/javascript" th:src="@{/resources/JS/bootstrap.bundle.min.js}"></script>
+<script type="text/javascript" th:src="@{/resources/JS/popper.min.js}"></script>
 
 </html>
